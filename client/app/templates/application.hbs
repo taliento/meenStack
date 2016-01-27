@@ -1,30 +1,24 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 <div class="container">
-<div class="navbar-header">
-<a href="#" class="navbar-brand">Project name</a>
-</div>
-<div class="navbar-collapse collapse" id="navbar">
-<ul class="nav navbar-nav">
-<li class="active"><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-</div>
+	<div class="navbar-header">
+		<a href="#" class="navbar-brand">Project name</a>
+	</div>
+	<div class="navbar-collapse collapse" id="navbar">
+		<ul class="nav navbar-nav">
+			{{#link-to "listExample" tagName="li" href=false}}
+  			<a {{bind-attr href="view.href"}}>
+    			List Example
+ 				 </a>
+			{{/link-to}}
+		</ul>
+	</div>
 </div>
 </nav>
-<div class="container">
-<div class="page-header">
-<h1>The meen stack</h1>
+
+<div>
+  {{outlet}}
 </div>
-<div class="list-group">
-{{#each model as |item|}}
-<a href="#" class="list-group-item">
-<h4 class="list-group-item-heading">{{item.title}} - by {{item.author}}</h4> 
-<p class="list-group-item-text">{{item.content}}</p>
-</a>
-{{/each}}
-</div>
-</div>
+
 <footer class="footer">
 <div class="container">
 <p class="text-muted">Place sticky footer content here.</p>
