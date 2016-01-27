@@ -712,11 +712,19 @@ define('client/router', ['exports', 'ember', 'client/config/environment'], funct
 
   Router.map(function () {
     this.route('listExample');
+    this.route('home');
   });
 
   exports['default'] = Router;
 });
 define('client/routes/application', ['exports', 'ember'], function (exports, _ember) {
+	exports['default'] = _ember['default'].Route.extend({
+		redirect: function redirect() {
+			this.transitionTo('home');
+		}
+	});
+});
+define('client/routes/home', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({});
 });
 define('client/routes/list-example', ['exports', 'ember'], function (exports, _ember) {
@@ -883,7 +891,7 @@ define("client/templates/application", ["exports"], function (exports) {
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("p");
         dom.setAttribute(el3, "class", "text-muted");
-        var el4 = dom.createTextNode("Place sticky footer content here.");
+        var el4 = dom.createTextNode("meen stack app");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n");
@@ -4617,6 +4625,57 @@ define("client/templates/components/form-element/vertical/textarea", ["exports"]
       statements: [["block", "if", [["get", "hasLabel", ["loc", [null, [1, 6], [1, 14]]]]], [], 0, null, ["loc", [null, [1, 0], [3, 7]]]], ["inline", "bs-textarea", [], ["id", ["subexpr", "concat", [["get", "elementId", ["loc", [null, [4, 25], [4, 34]]]], "-", ["get", "name", ["loc", [null, [4, 39], [4, 43]]]]], [], ["loc", [null, [4, 17], [4, 44]]]], "value", ["subexpr", "@mut", [["get", "value", ["loc", [null, [4, 51], [4, 56]]]]], [], []], "name", ["subexpr", "@mut", [["get", "name", ["loc", [null, [4, 62], [4, 66]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [4, 79], [4, 90]]]]], [], []], "cols", ["subexpr", "@mut", [["get", "cols", ["loc", [null, [4, 96], [4, 100]]]]], [], []], "rows", ["subexpr", "@mut", [["get", "rows", ["loc", [null, [4, 106], [4, 110]]]]], [], []]], ["loc", [null, [4, 0], [4, 112]]]], ["inline", "partial", ["components/form-element/feedback-icon"], [], ["loc", [null, [5, 0], [5, 51]]]], ["inline", "partial", ["components/form-element/errors"], [], ["loc", [null, [6, 0], [6, 44]]]]],
       locals: [],
       templates: [child0]
+    };
+  })());
+});
+define("client/templates/home", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "triple-curlies"
+        },
+        "revision": "Ember@2.2.0",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 0
+          }
+        },
+        "moduleName": "client/templates/home.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "container");
+        var el2 = dom.createTextNode("\n	");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("p");
+        var el3 = dom.createTextNode("This a test app");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes() {
+        return [];
+      },
+      statements: [],
+      locals: [],
+      templates: []
     };
   })());
 });

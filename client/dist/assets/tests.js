@@ -138,6 +138,15 @@ define('client/tests/routes/application.jshint', ['exports'], function (exports)
     assert.ok(true, 'routes/application.js should pass jshint.');
   });
 });
+define('client/tests/routes/home.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes');
+  QUnit.test('routes/home.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/home.js should pass jshint.');
+  });
+});
 define('client/tests/routes/list-example.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -232,6 +241,27 @@ define('client/tests/unit/routes/application-test.jshint', ['exports'], function
   QUnit.test('unit/routes/application-test.js should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/application-test.js should pass jshint.');
+  });
+});
+define('client/tests/unit/routes/home-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:home', 'Unit | Route | home', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('client/tests/unit/routes/home-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/routes');
+  QUnit.test('unit/routes/home-test.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/home-test.js should pass jshint.');
   });
 });
 define('client/tests/unit/routes/list-example-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
